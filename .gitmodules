@@ -1,0 +1,5 @@
+[submodule "sys"]
+path = sys
+url = https://github.com/s-macke/jor1k-sysroot.git
+path = js
+url = https://github.com/s-macke/jor1k
