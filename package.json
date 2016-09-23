@@ -1,0 +1,112 @@
+{
+  "name": "linux-js",
+  "version": "1.0.0",
+  "description": "Operating System in a browser",
+  "homepage": "https://github.com/websemantics/linux.js",
+  "contributors": [
+    {
+      "name": "Sebastian Macke",
+      "email": "sebastian@macke.de"
+    },
+    {
+      "name": "Gerard Braad",
+      "email": "me@gbraad.nl"
+    },
+    {
+      "name": "Benjamin Burns",
+      "email": "benjamin.c.burns@gmail.com"
+    },
+    {
+      "name": "Lawrence Angrave",
+      "email": "root@localhost"
+    },
+    {
+      "name": "Neelabh Gupta",
+      "email": "nsgupta2@illinois.edu"
+    },
+    {
+      "name": "Adnan M.Sagar, PhD.",
+      "email": "adnan@websemantics.ca"
+    }
+  ],
+  "keywords": [
+    "or1k",
+    "emulation",
+    "OpenRISC",
+    "linux.js"
+  ],
+  "author": "Sebastian Macke",
+  "license": "simplified BSD",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "websemantics/linux.js.git"
+  },
+  "config": {
+    "minify": false,
+    "deploy": {
+      "name": "iAyeBot",
+      "email": "iayebot@websemantics.ca",
+      "branch": "master:gh-pages",
+      "message": "Deploy to gh-pages"
+    },
+    "dir": {
+      "src": "./src/",
+      "temp": "./temp/",
+      "dist": "./public/"
+    }
+  },
+  "scripts": {
+    "postinstall": "npm run install:dependencies -s && -s && npm run build -s",
+    "preinstall": "npm run install:clean -s && npm run install:init -s ",
+    "install:init": "mkdir -p $npm_package_config_dir_temp",
+    "install:clean": "rm -rf $npm_package_config_dir_temp",
+    "install:dependencies": "npm run install:clone -s && npm run install:move -s && npm run install:clean",
+    "install:clone": "npm run clone:jor1k -s && npm run clone:sysroot -s && npm run clone:photon -s",
+    "install:move": "npm run move:jor1k -s && npm run move:sysroot -s && npm run move:photon -s",
+    "clone:jor1k": "git clone https://github.com/s-macke/jor1k ${npm_package_config_dir_temp}jor1k",
+    "clone:sysroot": "git clone https://github.com/s-macke/jor1k-sysroot ${npm_package_config_dir_temp}sys",
+    "clone:photon": "git clone https://github.com/connors/photon ${npm_package_config_dir_temp}photon",
+    "move:jor1k": "npm run move:jor1k:js -s && npm run move:jor1k:test -s && npm run move:jor1k:utils -s",
+    "move:jor1k:js": "mv ${npm_package_config_dir_temp}jor1k/js ${npm_package_config_dir_src}",
+    "move:jor1k:test": "mv ${npm_package_config_dir_temp}jor1k/test ${npm_package_config_dir_src}",
+    "move:jor1k:utils": "mv ${npm_package_config_dir_temp}jor1k/utils ${npm_package_config_dir_src}",
+    "move:sysroot": "mv ${npm_package_config_dir_temp}sys ${npm_package_config_dir_src}",
+    "move:photon": "npm run move:photon:css -s && npm run move:photon:fonts -s",
+    "move:photon:css": "mv ${npm_package_config_dir_temp}photon/dist/css ${npm_package_config_dir_src}",
+    "move:photon:fonts": "mv ${npm_package_config_dir_temp}photon/dist/fonts ${npm_package_config_dir_src}",
+    "build": "npm run compile -s && npm run build:copy -s",
+    "prebuild": "npm run build:clean -s && npm run build:init -s ",
+    "build:init": "mkdir -p $npm_package_config_dir_dist",
+    "build:clean": "rm -rf $npm_package_config_dir_dist",
+    "build:copy": "npm run copy:css -s && npm run copy:fonts -s && npm run copy:js -s",
+    "copy:css": "cp -r ${npm_package_config_dir_src}css $npm_package_config_dir_dist",
+    "copy:fonts": "cp -r ${npm_package_config_dir_src}fonts $npm_package_config_dir_dist",
+    "copy:js": "cp -r ${npm_package_config_dir_src}app.js $npm_package_config_dir_dist",
+    "compile": "[ \"$npm_package_config_minify\" = \"true\" ] && npm run compile:minify -s || npm run compile:default -s ",
+    "compile:default": "npm run compile:master -s && npm run compile:worker",
+    "compile:minify": "npm run compile:master:minify -s && npm run compile:worker:minify",
+    "compile:master": "browserify -r ${npm_package_config_dir_src}js/plugins/terminal-linux.js:LinuxTerm -r ${npm_package_config_dir_src}js/master/master.js:Jor1k -o ${npm_package_config_dir_dist}jor1k-master-min.js",
+    "compile:worker": "browserify ${npm_package_config_dir_src}js/worker/worker.js -o ${npm_package_config_dir_dist}jor1k-worker-min.js",
+    "compile:master:minify": "browserify -r ${npm_package_config_dir_src}js/plugins/terminal-linux.js:LinuxTerm -r ${npm_package_config_dir_src}js/master/master.js:Jor1k | uglifyjs -mc > \"${npm_package_config_dir_dist}jor1k-master-min.js\" ",
+    "compile:worker:minify": "browserify ${npm_package_config_dir_src}js/worker/worker.js | uglifyjs -mc > \"${npm_package_config_dir_dist}jor1k-worker-min.js\" ",
+    "deploy": "[ ${GH_TOKEN} ] && npm run deploy:travis -s || npm run deploy:local -s ",
+    "deploy:local": "repository=$(echo $npm_package_repository_url | sed 's/.*+//') && cd $npm_package_config_dir_dist && git push --force --quiet $repository ${npm_package_config_deploy_branch} > /dev/null 2>&1 ",
+    "deploy:travis": "cd $npm_package_config_dir_dist && git push --force --quiet \"https://${GH_TOKEN}@${GH_REF}\" ${npm_package_config_deploy_branch} > /dev/null 2>&1 ",
+    "predeploy": "npm run build -s && cd $npm_package_config_dir_dist && git init && git config user.name $npm_package_config_deploy_name && git config user.email $npm_package_config_deploy_email && git add -A . && git commit -am \"$npm_package_config_deploy_message\" "
+  },
+  "bugs": {
+    "url": "https://github.com/websemantics/linux.js/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jshint": "latest",
+    "uglifyjs": "*",
+    "browserify": "^8.0.3",
+    "expect": "^1.3.0",
+    "lab": "^5.2.0"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  }
+}

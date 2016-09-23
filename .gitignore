@@ -1,0 +1,10 @@
+/public
+/src/css
+/src/js
+/src/test
+/src/utils
+/src/sys
+/node_modules
+/temp
+npm-debug.log
+.DS_Store
