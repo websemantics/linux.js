@@ -23,9 +23,7 @@
 
 > Enhanced user experiences, extra documentation and more examples for the awesome [jor1k](https://github.com/s-macke/jor1k) project.
 
-### [Website](
-https://websemantics.github.io/linux.js)&nbsp;&nbsp;&nbsp;[Getting Started](
-https://websemantics.github.io/linux.js/documentation)&nbsp;&nbsp;&nbsp;[Submit Issue](https://github.com/websemantics/linux.js/issues)
+### [Website](https://websemantics.github.io/linux.js)&nbsp;&nbsp;&nbsp;[Documentation](https://websemantics.github.io/linux.js/documentation)&nbsp;&nbsp;&nbsp;[Submit Issue](https://github.com/websemantics/linux.js/issues)
 
 ## Install
 
