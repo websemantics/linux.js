@@ -81,6 +81,11 @@ This project depends on two Github repositories,
 
 ## Links
 
-Resources used in this project,
+Resources used or releated to this project,
 
 - [Photon](https://github.com/connors/photon), to build beautiful Electron apps using simple HTML and CSS.
+- [OpenRISC](http://openrisc.io/), creating a free and open processor for embedded system.
+
+## License
+
+Copyright (c) Web Semantics, Inc.
