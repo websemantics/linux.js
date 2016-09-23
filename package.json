@@ -81,7 +81,7 @@
     "build:init": "mkdir -p $npm_package_config_dir_dist",
     "build:clean": "rm -rf $npm_package_config_dir_dist",
     "build:copy": "npm run copy:assets -s && npm run copy:html -s && npm run copy:js -s",
-    "copy:assets": "cp -r ${npm_package_config_dir_src}css $npm_package_config_dir_dist",
+    "copy:assets": "cp -r ${npm_package_config_dir_src}assets $npm_package_config_dir_dist",
     "copy:html": "cp -r ${npm_package_config_dir_src}html/* $npm_package_config_dir_dist",
     "copy:js": "cp -r ${npm_package_config_dir_src}app.js $npm_package_config_dir_dist",
     "compile": "[ \"$npm_package_config_minify\" = \"true\" ] && npm run compile:minify -s || npm run compile:default -s ",
