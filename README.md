@@ -54,6 +54,12 @@ npm run compile
 
 Compiled files, `jor1k-master-min.js` and `jor1k-worker-min` are located at `./public` folder.
 
+To minify the output run,
+
+```bash
+npm run compile:minify
+```
+
 ## Deploy
 
 Deploy the project to gh-page,

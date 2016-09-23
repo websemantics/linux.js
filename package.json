@@ -43,7 +43,7 @@
     "url": "websemantics/linux.js.git"
   },
   "config": {
-    "minify": false,
+    "minify": true,
     "deploy": {
       "name": "iAyeBot",
       "email": "iayebot@websemantics.ca",
@@ -57,7 +57,7 @@
     }
   },
   "scripts": {
-    "postinstall": "npm run install:dependencies -s && -s && npm run build -s",
+    "postinstall": "npm run install:dependencies -s && npm run build -s",
     "preinstall": "npm run install:clean -s && npm run install:init -s ",
     "install:init": "mkdir -p $npm_package_config_dir_temp",
     "install:clean": "rm -rf $npm_package_config_dir_temp",
