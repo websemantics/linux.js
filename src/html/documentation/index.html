@@ -7,31 +7,79 @@
     <meta name="description" content="Linux.js: Operating System in a browser">
     <meta name="author" content="Adnan M.Sagar, PhD.">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/assets/css/normalize.css">
     <link rel="stylesheet" href="/assets/css/pygments-manni.css">
     <link rel="stylesheet" href="/assets/css/docs.css">
-    <link rel="stylesheet" href="/assets/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" type="text/css">
     <style>
-
+    .masthead {
+        position: relative;
+        padding-bottom: 80px;
+        color: #6D6C6D;
+        background-image: none;
+        background-color: #F5F5F5;
+    }
+    .title {
+        color: #6D6C6D;
+    }
+    .demo-app-container {
+      height: 500px;
+      box-shadow: 0 0 30px rgba(0,0,0,.1);
+      border: 1px solid #bebebe;
+      border-radius: 6px;
+    }
+    .logo {
+      width: 22px;
+      height: 22px;
+      margin-right:10px;
+      vertical-align: text-bottom;
+    }
+    .masthead-title {
+        padding: 0 1rem 1rem;
+        text-transform: uppercase;
+        text-shadow: none;
+    }
+    @media (min-width: 32em){
+      .masthead-title {
+          padding: 0px 8rem 1rem;
+      }
+    }
+    .masthead-content {
+        position: relative;
+        margin-top: 10px;
+    }
+    .nav {
+      border: 0px;
+      padding-top: 1.7rem;
+      padding-bottom: 1.7rem;
+    }
+    .nav-item {
+      color: #6D6C6D;
+      text-transform: uppercase;
+    }
+    footer .heart {
+      vertical-align: text-bottom;
+      width: 14px;
+      height:14px;
+      margin: 0 4px;
+    }
     </style>
   </head>
   <body>
     <div class="masthead">
       <div class="container">
         <nav class="nav">
-          <a class="title" href="https://websemantics.github.io/linux.js"><img class="logo" src="/assets/img/logo.svg"/>LINUX.JS</a>
+          <a class="title" href="https://websemantics.github.io/linux.js"><img class="logo" src="assets/img/logo.svg"/>LINUX.JS</a>
           <div class="nav-group">
             <a class="nav-item" href="/documentation">Documentation</a>
-            <a class="nav-item" href="https://github.com/s-macke/jor1k">Jor1k</a>
             <a class="nav-item" href="https://github.com/websemantics/linux.js">GitHub</a>
           </div>
         </nav>
         <div class="masthead-content text-centered">
           <div class="demo-app-container example-container">
-            <iframe class="demo-app" src="/app.html"></iframe>
+            <iframe class="demo-app" src="/demo-app.html"></iframe>
           </div>
           <h2 class="masthead-title">Operating System in Browser</h2>
         </div>
@@ -43,7 +91,7 @@
           <div class="col">
             <div class="footer-content">
               <p class="footer-text">
-                Code licensed under the <a href="https://raw.githubusercontent.com/s-macke/jor1k/master/LICENSE.md">BSD License</a>. <a href="https://websemantics.github.io/linux.js">Linux.js</a> was built with <img class="heart" src="/assets/img/heart.svg"/> by <a href="http://websemantics.ca">Web Semantics, Inc</a>.
+                Code licensed under the <a href="https://raw.githubusercontent.com/s-macke/jor1k/master/LICENSE.md">BSD License</a>. Linux.JS was built with <img class="heart" src="assets/img/heart.svg"/> by <a href="http://websemantics.ca">Web Semantics, Inc</a>.
               </p>
               <ul class="footer-links">
                 <li>Currently v0.0.1</li>
@@ -53,8 +101,6 @@
                 <li><a href="https://github.com/websemantics/linux.js/issues">Issues</a></li>
                 <li>&middot;</li>
                 <li><a href="https://github.com/s-macke/jor1k">Jor1k</a></li>
-                <li>&middot;</li>
-                <li><a href="http://openrisc.io/">OpenRISC</a></li>
               </ul>
             </div>
           </div>

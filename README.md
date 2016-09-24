@@ -21,7 +21,7 @@
 
 ```
 
-> Enhanced user experiences, extra documentation and more examples for the awesome [jor1k](https://github.com/s-macke/jor1k) project.
+> Enhanced user experiences, extra documentation and more examples for the awesome [Jor1k](https://github.com/s-macke/jor1k) project.
 
 ### [Website](https://websemantics.github.io/linux.js)&nbsp;&nbsp;&nbsp;[Documentation](https://websemantics.github.io/linux.js/documentation)&nbsp;&nbsp;&nbsp;[Jor1k](https://s-macke.github.io/jor1k/)&nbsp;&nbsp;&nbsp;[Submit Issue](https://github.com/websemantics/linux.js/issues)
 
@@ -94,5 +94,8 @@ Resources used or releated to this project,
 - [OpenRISC](http://openrisc.io/), creating a free and open processor for embedded system.
 
 ## License
+
+- Jor1k is distributed under the terms of the Simplified [BSD License](https://raw.githubusercontent.com/s-macke/jor1k/master/LICENSE.md).
+- The ACE editor is distributed under the terms the [BSD licensed](https://raw.githubusercontent.com/ajaxorg/ace/master/LICENSE).
 
 Copyright (c) Web Semantics, Inc.

@@ -73,7 +73,7 @@
     "move:jor1k:utils": "mv ${npm_package_config_dir_temp}jor1k/utils ${npm_package_config_dir_src}",
     "move:sysroot": "mv ${npm_package_config_dir_temp}sys ${npm_package_config_dir_src}",
     "move:photon": "npm run move:photon:css -s && npm run move:photon:fonts -s && npm run move:photon:docs -s",
-    "move:photon:css": "mv ${npm_package_config_dir_temp}photon/dist/css ${npm_package_config_dir_src}/assets",
+    "move:photon:css": "mv ${npm_package_config_dir_temp}photon/dist/css/* ${npm_package_config_dir_src}/assets/css",
     "move:photon:fonts": "mv ${npm_package_config_dir_temp}photon/dist/fonts ${npm_package_config_dir_src}/assets",
     "move:photon:docs": "mv ${npm_package_config_dir_temp}photon/docs/assets/css/* ${npm_package_config_dir_src}/assets/css",
     "build": "npm run compile -s && npm run build:copy -s",
