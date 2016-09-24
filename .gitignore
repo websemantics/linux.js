@@ -1,6 +1,6 @@
 /public
 /src/assets/css/*
-/src/assets/css/!style.css
+!/src/assets/css/style.css
 /src/assets/fonts
 /src/js
 /src/test
