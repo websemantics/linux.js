@@ -7,64 +7,14 @@
     <meta name="description" content="Linux.js: Operating System in a browser">
     <meta name="author" content="Adnan M.Sagar, PhD.">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/assets/css/normalize.css">
     <link rel="stylesheet" href="/assets/css/pygments-manni.css">
     <link rel="stylesheet" href="/assets/css/docs.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" type="text/css">
     <style>
-    .masthead {
-        position: relative;
-        padding-bottom: 80px;
-        color: #6D6C6D;
-        background-image: none;
-        background-color: #F5F5F5;
-    }
-    .title {
-        color: #6D6C6D;
-    }
-    .demo-app-container {
-      height: 500px;
-      box-shadow: 0 0 30px rgba(0,0,0,.1);
-      border: 1px solid #bebebe;
-      border-radius: 6px;
-    }
-    .logo {
-      width: 22px;
-      height: 22px;
-      margin-right:10px;
-      vertical-align: text-bottom;
-    }
-    .masthead-title {
-        padding: 0 1rem 1rem;
-        text-transform: uppercase;
-        text-shadow: none;
-    }
-    @media (min-width: 32em){
-      .masthead-title {
-          padding: 0px 8rem 1rem;
-      }
-    }
-    .masthead-content {
-        position: relative;
-        margin-top: 10px;
-    }
-    .nav {
-      border: 0px;
-      padding-top: 1.7rem;
-      padding-bottom: 1.7rem;
-    }
-    .nav-item {
-      color: #6D6C6D;
-      text-transform: uppercase;
-    }
-    footer .heart {
-      vertical-align: text-bottom;
-      width: 14px;
-      height:14px;
-      margin: 0 4px;
-    }
     </style>
   </head>
   <body>
@@ -73,18 +23,46 @@
         <nav class="nav">
           <a class="title" href="https://websemantics.github.io/linux.js"><img class="logo" src="assets/img/logo.svg"/>LINUX.JS</a>
           <div class="nav-group">
-            <a class="nav-item" href="/documentation">Documentation</a>
+            <a class="nav-item" href="/">Home</a>
+            <span class="nav-item active" href="/documentation">Documentation</span>
             <a class="nav-item" href="https://github.com/websemantics/linux.js">GitHub</a>
           </div>
         </nav>
-        <div class="masthead-content text-centered">
-          <div class="demo-app-container example-container">
-            <iframe class="demo-app" src="/demo-app.html"></iframe>
-          </div>
-          <h2 class="masthead-title">Operating System in Browser</h2>
+        <div class="subpage-header-content">
+          <h1 class="subpage-title">Documentatio</h1>
+          <p class="subpage-lead">More information, tips and instructions for working with <a href="https://github.com/s-macke/jor1k">Jor1k</a></p>
         </div>
       </div>
     </div>
+
+    <section class="component-section">
+          <div class="container">
+            <div class="col-group">
+              <div class="col">
+                <h2>Bars</h2>
+                <p class="component-description">Bars are placed at the top and bottom of core sections of your application and allow you to drag the application
+                  window around your desktop.</p>
+              <div class="highlight">
+                  <pre><code class="language-html" data-lang="html"><span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"toolbar toolbar-header"</span><span class="nt">&gt;</span>
+                              <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"title"</span><span class="nt">&gt;</span>Header<span class="nt">&lt;/h1&gt;</span>
+                            <span class="nt">&lt;/header&gt;</span>
+
+              ...
+
+              <span class="nt">&lt;footer</span> <span class="na">class=</span><span class="s">"toolbar toolbar-footer"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"title"</span><span class="nt">&gt;</span>Footer<span class="nt">&lt;/h1&gt;</span>
+              <span class="nt">&lt;/footer&gt;</span></code></pre></div>
+              </div>
+              <div class="col">
+                <div class="example-container example-component-container example-component-window" style="position: absolute; left: 48px; right: 48px; top: 48px; bottom: auto; width: auto; margin-left: 0px; margin-right: 0px; margin-top: 0px;">
+                  <iframe class="component-example" src="/components/bars.html"></iframe>
+                </div><div style="height: 300px; width: 423.5px; margin: 0px 0px 48px; border-spacing: 0px; border: 0px; padding: 0px; font-size: 1em; position: static; float: none;"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
     <footer class="footer">
       <div class="container text-centered">
         <div class="col-group">
