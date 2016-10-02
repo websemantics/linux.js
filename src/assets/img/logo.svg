@@ -1,8 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <g fill="#6D6C6D">
-    <path opacity="1" d="M16 0C7 0 0 3 0 6.5c0 2.4 7 5 16 5 7.3 0 13.8-1.7 16-3.6V6.4C32 3 25 0 16 0z"/>
-    <path opacity="0.7" d="M0 9.3V13c0 2.4 7 5.2 16 5.2 7.3 0 13.8-2 16-3.8V9.7c-3.4 2-10 3.4-16 3.4-6.3 0-13-1.4-16-3.7z"/>
-    <path opacity="0.5" d="M0 15.8v3.8c0 2.3 7 5 16 5 7.3 0 13.8-1.7 16-3.6v-4.8c-3.4 2-10 3.4-16 3.4-6.3 0-13-1.4-16-3.8z"/>
-    <path opacity="0.3" d="M0 22.3v3.2C0 29 7 32 16 32s16-3 16-6.5v-2.7c-3.4 2-10 3.4-16 3.4-6.3 0-13-1.5-16-4z"/>
-  </g>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" viewBox="0 0 32 32" id="svg2" version="1.1" inkscape:version="0.48.5 r10040" width="100%" height="100%" sodipodi:docname="logo.svg">
+  <metadata id="metadata30">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs id="defs28" />
+  <sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttolerance="10" gridtolerance="10" guidetolerance="10" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-width="1114" inkscape:window-height="853" id="namedview26" showgrid="false" showguides="true" inkscape:guide-bbox="true" inkscape:zoom="6.8279998" inkscape:cx="2.3069685" inkscape:cy="26.35556" inkscape:window-x="0" inkscape:window-y="0" inkscape:window-maximized="0" inkscape:current-layer="svg2" />
+  <path fill="#6d6c6d" fill-rule="evenodd" d="M0 0h32l-2 30-14 2-14-2z" id="path4" />
+  <path fill="#fff" fill-rule="evenodd" d="M16 12.604l-10 1.4 1.3 12.8 8.7 1z" opacity=".7" id="path6" />
+  <path fill="#fff" fill-rule="evenodd" d="M16 2h14l-1.8 26.3L16 30z" opacity=".4" id="path8" />
+  <path d="M16 12.6L26 14l-1.3 12.8-8.7 1z" id="path12" fill-rule="evenodd" fill="#fff" />
+  <path fill="#fff" d="M24.7 8c0 1.5-1.3 3-3 3-1.6 0-3-1.5-3-3 0-1.8 1.4-3 3-3 1.7 0 3 1.2 3 3z" id="path14" />
+  <path fill="none" stroke="#6d6c6d" stroke-width=".7" d="M20 7.8c1.4-1 2.4-.7 3.3 0" stroke-linecap="round" id="path16" />
+  <path fill="#fff" d="M13.6 8c0 1.5-1.3 3-3 3-1.6 0-3-1.5-3-3 0-1.8 1.4-3 3-3 1.7 0 3 1.2 3 3z" id="path18" />
+  <path fill="none" stroke="#6d6c6d" stroke-width=".7" d="M9 7.8c1.3-1 2.3-.7 3.2 0" stroke-linecap="round" id="path20" />
+  <text xml:space="preserve" style="font-size:50px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans" x="-1.767767" y="44.993088" id="text3768" sodipodi:linespacing="125%"><tspan sodipodi:role="line" id="tspan3770" x="-1.767767" y="44.993088" /></text>
+  <path style="fill:#6d6c6d;fill-opacity:1;fill-rule:evenodd;stroke:none" d="m 17.828954,19.38771 6.069569,-1.437364 -0.10356,1.649838 -4.515527,1.026561 -0.01468,1.065229 4.400768,-0.616441 -0.33657,4.095226 -5.49999,0.779587 0,-1.420843 4.319802,-0.612303 0,-1.218775 -4.319802,0.612304 z" id="rect3906" inkscape:connector-curvature="0" sodipodi:nodetypes="ccccccccccccc" />
+  <path sodipodi:nodetypes="ccccccccccc" inkscape:connector-curvature="0" id="path3911" d="m 13.036144,20.660244 -1.93976,-0.414265 -0.138191,-1.617656 3.187717,0.711857 0,6.60398 -5.5022147,-0.819168 -0.1464558,-1.89813 1.1730218,0.189448 0,0.431721 3.3658767,0.501112 z" style="fill:#6d6c6d;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+  <path d="M16 13.6875L8 14.5l8 3.489 8-3.489z" id="path10" fill-rule="evenodd" fill="#ff9e21" style="opacity:0.86065574" />
 </svg>
