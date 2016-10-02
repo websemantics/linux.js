@@ -63,7 +63,7 @@ npm run compile:minify
 
 ## Deploy
 
-Deploy the project to gh-page,
+Deploy the project to gh-page (*owner*),
 
 ```bash
 npm run deploy
@@ -71,7 +71,7 @@ npm run deploy
 
 ## Support
 
-Need help or have a question? post a questions at [StackOverflow](https://stackoverflow.com/questions/tagged/linux.js)
+Need help or have a question? post a questions at [StackOverflow](https://stackoverflow.com/questions/tagged/linux.js+jor1k)
 
 *Please don't use the issue trackers for support/questions.*
 
@@ -88,7 +88,7 @@ This project depends on two Github repositories,
 
 ## Links
 
-Resources used or releated to this project,
+Resources used or related to this project,
 
 - [Photon](https://github.com/connors/photon), to build beautiful Electron apps using simple HTML and CSS.
 - [OpenRISC](http://openrisc.io/), creating a free and open processor for embedded system.
