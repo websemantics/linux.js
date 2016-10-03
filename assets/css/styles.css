@@ -1,0 +1,88 @@
+/*************************************
+ * Linux.js styles
+ *************************************/
+
+@font-face {
+    font-family: "photon-entypo";
+    src: url("../fonts/photon-entypo.eot");
+    src: url("../fonts/photon-entypo.eot?#iefix") format("eot"), url("../fonts/photon-entypo.woff") format("woff"), url("../fonts/photon-entypo.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+.icon:before {
+    font-family: "photon-entypo";
+}
+body {
+    background-color: #F5F5F5;
+}
+.masthead {
+    position: relative;
+    padding-bottom: 0px;
+    color: #6D6C6D;
+    background: transparent;
+}
+.title {
+    color: #6D6C6D;
+    font-size: 24px;
+    opacity: 0.7;
+}
+.title:hover {
+    opacity: 1;
+}
+.demo-app-container {
+    height: 500px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .1);
+    border: 1px solid #bebebe;
+    border-radius: 6px;
+}
+.logo {
+    width: 42px;
+    height: 42px;
+    margin: 0px 10px 0px 2px;
+    vertical-align: bottom;
+}
+.masthead-title {
+    padding: 0 1rem 1rem;
+    text-transform: uppercase;
+    text-shadow: none;
+}
+@media (min-width: 32em) {
+    .masthead-title {
+        padding: 1rem 8rem 5rem;
+    }
+}
+.masthead-content {
+    position: relative;
+    margin-top: 10px;
+}
+.nav {
+    border: 0px;
+    padding-top: 1.7rem;
+    padding-bottom: 1.7rem;
+}
+.nav-item {
+    color: #6D6C6D;
+    text-transform: uppercase;
+}
+.component-section .col {
+     border-left: none;
+}
+.component-section {
+  background: #fff;
+}
+.subpage-lead {
+  color: #555;
+}
+.toolbar-actions {
+    margin-top: 7px;
+}
+.footer {
+    border-top: 0px;
+    background-color: #FFFFFF;
+}
+.footer .heart {
+    width: 13px;
+    height: 13px;
+    margin: 0px 5px;
+    vertical-align: text-bottom;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Linux.js</title>
+    <link rel="stylesheet" href="assets/css/photon.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+  </head>
+  <body>
+    <div class="window">
+      <!-- .toolbar-header sits at the top of your app -->
+      <header class="toolbar toolbar-header">
+        <div class="toolbar-actions">
+           <div class="btn-group">
+             <button class="btn btn-default">
+               <span class="icon icon-upload-cloud"></span>
+             </button>
+             <button class="btn btn-default">
+               <span class="icon icon-arrows-ccw"></span>
+             </button>
+             <button class="btn btn-default">
+               <span class="icon icon-download"></span>
+             </button>
+             <button class="btn btn-default">
+               <span class="icon icon-clipboard"></span>
+             </button>
+             <button class="btn btn-default">
+               <span class="icon icon-resize-full"></span>
+             </button>
+           </div>
+           <button class="btn btn-default btn-dropdown pull-right">asm.js core</button>
+           <button class="btn btn-default btn-dropdown pull-right">10 fps</button>
+        </div>
+        </header>
+      <!-- Your app's content goes inside .window-content -->
+      <div class="window-content">
+        <div class="pane-group">
+          <div class="pane pane-sm sidebar">
+            <nav class="nav-group">
+              <h5 class="nav-group-title">Options</h5>
+              <span class="nav-group-item">
+                <span class="icon icon-home"></span>
+                Linux.js
+              </span>
+              <span class="nav-group-item active">
+                <span class="icon icon-tools"></span>
+                Compile C
+              </span>
+              <span class="nav-group-item">
+                <span class="icon icon-code"></span>
+                Run PHP
+              </span>
+            </nav>
+            <nav class="nav-group">
+              <h5 class="nav-group-title">Developers</h5>
+              <a href="http://simulationcorner.net" target="_blank" class="nav-group-item">
+                <span class="icon icon-vcard"></span>
+                Sebastian Macke
+              </a>
+              <a href="http://www.benjamincburns.com" target="_blank" class="nav-group-item">
+                <span class="icon icon-vcard"></span>
+                Ben Burns
+              </a>
+              <a href="http://gbraad.nl" target="_blank" class="nav-group-item">
+                <span class="icon icon-vcard"></span>
+                Gerard Braad
+              </a>
+              <a href="http://github.com/neelabhg" target="_blank" class="nav-group-item">
+                <span class="icon icon-vcard"></span>
+                Neelabh Gupta
+              </a>
+              <a href="http://github.com/angrave" target="_blank" class="nav-group-item">
+                <span class="icon icon-vcard"></span>
+                Lawrence Angrave
+              </a>
+            </nav>
+          </div>
+          <div class="pane">
+            <table id="tty" class="terminal" cellpadding="0" cellspacing="0">
+            </table>
+          </div>
+        </div>
+      </div>
+      <footer class="toolbar toolbar-footer">
+        <div class="title">61 KIPS</div>
+      </footer>
+    </div>
+    <script src="jor1k-master-min.js"></script>
+    <script>
+    var Jor1k = require("Jor1k");
+    var LinuxTerm = require("LinuxTerm");
+    jor1kgui = new Jor1k({term: new LinuxTerm("tty"), path: "sys/or1k/"});
+    </script>
+  </body>
+</html>
