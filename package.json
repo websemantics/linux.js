@@ -72,7 +72,7 @@
     "install:clean:photon": "npm run install:clean:photon:css -s && npm run install:clean:photon:fonts -s",
     "install:clean:photon:css": "rm -rf ${npm_package_config_dir_src}assets/css/photon",
     "install:clean:photon:fonts": "rm -rf ${npm_package_config_dir_src}assets/fonts",
-    "install:dependencies": "npm run install:clone -s && npm run install:move -s && npm run install:clean",
+    "install:dependencies": "npm run install:clone -s && npm run install:move -s && npm run install:clean:temp",
     "install:clone": "npm run clone:jor1k -s && npm run clone:sysroot -s && npm run clone:photon -s",
     "install:move": "npm run move:jor1k -s && npm run move:sysroot -s && npm run move:photon -s",
     "clone:jor1k": "git clone https://github.com/s-macke/jor1k ${npm_package_config_dir_temp}jor1k",
