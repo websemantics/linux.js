@@ -36,7 +36,7 @@ npm i
 npm run build
 ```
 
-3. Compile/optional minify [dependencies](#dependencies) (`jor1k-master-min.js` and `jor1k-worker-min` can be found @ `./public` folder)
+3. Compile (and optionaly minify) [dependencies](#dependencies) (`jor1k-master-min.js` and `jor1k-worker-min` can be found @ `./public` folder)
 ```bash
 npm run compile
 npm run compile:minify
