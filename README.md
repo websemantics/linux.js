@@ -22,53 +22,40 @@
 
 ### [Website](https://websemantics.github.io/linux.js)&nbsp;&nbsp;&nbsp;[Documentation](https://websemantics.github.io/linux.js/documentation)&nbsp;&nbsp;&nbsp;[Jor1k](https://s-macke.github.io/jor1k/)&nbsp;&nbsp;&nbsp;[Submit Issue](https://github.com/websemantics/linux.js/issues)
 
-## Install
+## Getting Started
 
-Require the project npm packages and some folders from the project [dependencies](#dependencies) then run [build](#build) script,
-
+1. Clone and install [dependencies](#dependencies),
 ```bash
+git clone https://github.com/websemantics/linux.js
+cd linux.js
 npm i
 ```
 
-All source files including [dependencies](#dependencies) are located at `./src` folder.
+Source files as well as the [dependencies](#dependencies) will be located @ `./src` folder.
 
-## Build
+2. Compile the project [dependencies](#dependencies) and minify (optional),
+```bash
+npm run compile
+npm run compile:minify
+```
 
-Build the project pages then run [compile](#compile) script,
+Compiled files (`jor1k-master-min.js` and `jor1k-worker-min`) will be located @ `./public` folder. 
 
+3. Build the project,
 ```bash
 npm run build
 ```
 
-Project pages are located at `./public` folder.
+Browse to  `./public/index.html` to view
 
-## Compile
-
-Compile [jor1k](https://github.com/s-macke/jor1k) source files,
-
-```bash
-npm run compile
-```
-
-Compiled files, `jor1k-master-min.js` and `jor1k-worker-min` are located at `./public` folder.
-
-To minify the output run,
-
-```bash
-npm run compile:minify
-```
-
-## Deploy
-
-Deploy the project to gh-page (*owner*),
-
+4. Deploy to gh-page (*owner only*),
 ```bash
 npm run deploy
 ```
 
 ## Support
 
-Need help or have a question? post a questions at [StackOverflow](https://stackoverflow.com/questions/tagged/linux.js+jor1k)
+Need help or have a question? post a questions at [StackOverflow](https://stackoverflow.com/questions/tagged/websemantics+linux.js+jor1k)
 
 *Please don't use the issue trackers for support/questions.*
 
