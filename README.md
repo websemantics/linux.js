@@ -34,14 +34,13 @@ npm i
 
 2. Build to the `./public` folder,
 ```bash
-npm run build
+npm run build 
 ```
 
-3. Compile (and optionaly minify) [dependencies](#dependencies),
+3. Compile and minify [dependencies](#dependencies),
 ```bash
 npm run compile
-npm run compile:minify
-# Find 'jor1k-master-min.js' and 'jor1k-worker-min' @ './public'
+npm run compile:minify  # Find 'jor1k-master-min.js' and 'jor1k-worker-min.js' @ './public'
 ```
 
 4. Deploy to gh-page (*owner only*),
