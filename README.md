@@ -32,23 +32,17 @@ npm i
 # Find the source code and dependency files @ './src'
 ```
 
-2. Build to the `./public` folder,
+2. Build to the `./public` folder (including `jor1k-master-min.js` and `jor1k-worker-min.js`) 
 ```bash
 npm run build 
 ```
 
-3. Compile and minify [dependencies](#dependencies),
-```bash
-npm run compile
-npm run compile:minify  # Find 'jor1k-master-min.js' and 'jor1k-worker-min.js' @ './public'
-```
+3. Browse to `./public/index.html` to view
 
 4. Deploy to gh-page (*owner only*),
 ```bash
 npm run deploy
 ```
-
-5. Browse to `./public/index.html` to view
 
 ## Support
 
