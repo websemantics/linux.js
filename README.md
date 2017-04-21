@@ -24,12 +24,12 @@
 
 ## Getting Started
 
-1. Clone and install dependencies,
+1. Clone and install [dependencies](#dependencies),
 ```bash
 git clone https://github.com/websemantics/linux.js
 cd linux.js
 npm i
-# Find the source code and [dependencies](#dependencies) files @ `./src` folder
+# Find the source code and dependency files @ './src'
 ```
 
 2. Build the project to `./public` folder,
@@ -41,7 +41,7 @@ npm run build
 ```bash
 npm run compile
 npm run compile:minify
-# Find `jor1k-master-min.js` and `jor1k-worker-min` @ `./public` folder
+# Find 'jor1k-master-min.js' and 'jor1k-worker-min' @ './public'
 ```
 
 4. Deploy to gh-page (*owner only*),
