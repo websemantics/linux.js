@@ -32,7 +32,7 @@ npm i
 # Find the source code and dependency files @ './src'
 ```
 
-2. Build the project to `./public` folder,
+2. Build to the `./public` folder,
 ```bash
 npm run build
 ```
