@@ -37,7 +37,7 @@ function tree(data) {
                 }) :
                 template('file-template', {
                     id: id,
-                    icon: (icon = icons.getClass(filename)) ? icon : 'text-icon',
+                    icon: (icon = icons.getClass(file.name)) ? icon : 'text-icon',
                     name: file.name,
                     path: hashbang + '/' + path,
                     padding: padding

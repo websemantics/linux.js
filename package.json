@@ -85,7 +85,7 @@
     "move:sysroot": "mv ${npm_package_config_dir_temp}sys ${npm_package_config_dir_src}",
     "move:fileicons": "npm run move:fileicons:css -s && npm run move:fileicons:fonts -s && npm run move:fileicons:js -s",
     "move:fileicons:js": "mv ${npm_package_config_dir_temp}file-icons-js/index.js ${npm_package_config_dir_src}assets/js/fileicons",
-    "move:fileicons:css": "mv ${npm_package_config_dir_temp}file-icons-js/css/* ${npm_package_config_dir_src}assets/css/fileicons",
+    "move:fileicons:css": "mv ${npm_package_config_dir_temp}file-icons-js/css/style.css ${npm_package_config_dir_src}assets/css/fileicons.css",
     "move:fileicons:fonts": "mv ${npm_package_config_dir_temp}file-icons-js/fonts ${npm_package_config_dir_src}assets",
     "build": "npm run compile -s && npm run build:copy -s",
     "prebuild": "npm run build:clean -s && npm run build:init -s",

@@ -2,6 +2,7 @@
 /src/assets/css/*
 !/src/assets/css/style.css
 /src/assets/fonts
+/src/assets/js
 /src/js
 /src/test
 /src/utils
