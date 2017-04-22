@@ -16,6 +16,7 @@ get('/sys/fs.json', function (err, data) {
  * @returns {void}
  */
 function tree(data) {
+    var icons = window.FileIcons, icon
 
     /* Parse the files tree and generate html */
     function parse(files, nested, base) {
@@ -36,7 +37,7 @@ function tree(data) {
                 }) :
                 template('file-template', {
                     id: id,
-                    icon: 'text-icon',
+                    icon: (icon = icons.getClass(filename)) ? icon : 'text-icon',
                     name: file.name,
                     path: hashbang + '/' + path,
                     padding: padding
