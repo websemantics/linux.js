@@ -94,7 +94,7 @@
     "copy:sysroot": "cp -r ${npm_package_config_dir_src}sys $npm_package_config_dir_dist",
     "copy:assets": "cp -r ${npm_package_config_dir_src}assets $npm_package_config_dir_dist",
     "copy:html": "cp -r ${npm_package_config_dir_src}html/* $npm_package_config_dir_dist",
-    "copy:js": "cp -r ${npm_package_config_dir_src}app.js $npm_package_config_dir_dist",
+    "copy:js": "cp -r ${npm_package_config_dir_src}index.js $npm_package_config_dir_dist",
     "compile": "[ \"$npm_package_config_minify\" = \"true\" ] && npm run compile:minify -s || npm run compile:default -s",
     "compile:default": "npm run compile:master -s && npm run compile:worker",
     "compile:minify": "npm run compile:master:minify -s && npm run compile:worker:minify",
