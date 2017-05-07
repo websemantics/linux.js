@@ -1,11 +1,8 @@
 ```
-
-       ╭──────╮    
-       │      │    
-       │      │                   ))))
-       │      │      ╭───╮  ╭ooO_(o o)_Ooo╮╭─╮  ╭───╮  ╭──╮          ╭───╮  ╭──────╮
-       │      │      ├───┤  │     (_) │   ││ │  ╰╮  ╰╮╭╯ ╭╯          │   │  │  ────┤
-       │      ╰───╮  │   │  │   ╭╮ │  │   ╰╯ │   ╰╮  ╰╯ ╭╯          ╭╯   │  │      │
+       ╭─────╮                    ))))
+       │     │       ╭───╮  ╭ooO_(o o)_Ooo╮╭─╮  ╭───╮  ╭──╮          ╭───╮  ╭──────╮
+       │     │       ├───┤  │     (_) │   ││ │  ╰╮  ╰╮╭╯ ╭╯          │   │  │  ────┤
+       │     ╰────╮  │   │  │   ╭╮ │  │   ╰╯ │   ╰╮  ╰╯ ╭╯          ╭╯   │  │      │
        │          │  │   │  │   ││ │  │      │   ╭╯  ╭╮ ╰╮   ╭──╮   │    │  ├────  │
        ╰──────────╯  ╰───╯  ╰───╯╰─╯  ╰────┴─╯   ╰───╯╰──╯   ╰──╯   ╰────╯  ╰──────╯
 
@@ -15,12 +12,10 @@
 
    ░░░░░░░░░░▒▒▒▒▒▒▒▓▓▓▓▓███  W O R K   I N   P R O G R E S S  ███▓▓▓▓▓▒▒▒▒▒▒░░░░░░░░░░░
 
-
 ```
+> Enhanced user and developer experiences for the awesome [Jor1k](https://github.com/s-macke/jor1k) project.
 
-> Enhanced user experiences, extra documentation and more examples for the awesome [Jor1k](https://github.com/s-macke/jor1k) project.
-
-### [Website](https://websemantics.github.io/linux.js)&nbsp;&nbsp;&nbsp;[Documentation](https://websemantics.github.io/linux.js/documentation)&nbsp;&nbsp;&nbsp;[Jor1k](https://s-macke.github.io/jor1k/)&nbsp;&nbsp;&nbsp;[Submit Issue](https://github.com/websemantics/linux.js/issues)
+[![Live demo](https://img.shields.io/badge/Live%20demo-%E2%86%92-9D6EB3.svg?style=flat-square)](https://websemantics.github.io/linux.js)
 
 ## Getting Started
 
