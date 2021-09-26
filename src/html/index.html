@@ -1,271 +1,192 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-
-<head>
+  <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>CSS UI</title>
-    <link href="http://ui.dev/projects/splitpane/splitpane.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/fileicons.css" rel="stylesheet" type="text/css">
+    <title>Linux.js</title>
     <style>
-    #clipboard {
-        margin: 0 5px;
-        font: inherit;
-        font-family: inherit;
-        font-size: inherit;
-        line-height: inherit;
-        border-color: #ccc;
-        width: 310px;
-    }
-    #fpsselect,
-    #coreselect {
-        display: block;
-        width: 80%;
-        height: 18px;
-        margin: 10px 5px;
-    }
-    #sound + label{
-        font-size : 12px;
-        background-color: transparent;
-        border: 0;
-        padding: 2px;
-        color: #aaa;
-        font-family: HelveticaNeue, Helvetica, Arial, sans-serif;
-        text-transform: uppercase;
-    } 
+      * { outline: none !important; }
+      body { font-family: HelveticaNeue, Helvetica, Arial, sans-serif; font-size: 12px; letter-spacing: 1px; overflow: hidden;}
+      ._tree, ._tree ul { margin: 0; list-style: none;}
+      ._tree { font-size: 14px;}
+      ._tree ul { padding: 0;}
+      ._tree input[type=checkbox], ._tree ul { display: none;}
+      ._tree li label, ._tree li a { display: block; padding: 6px; color: #4078c0; text-decoration: none; white-space: nowrap;}
+      ._tree li,      ._tree li+li { margin: 0; line-height: 20px; user-select: none; border-top: 1px solid #eee;}
+      ._tree>li:first-child { border-top: 0;}
+      ._tree label:hover { background: #f5f5f5;}
+      ._tree li a { margin: -6px;}
+      ._tree a:active, ._tree a:focus { color: #9a9a9a;}
+      ._tree input[type=checkbox]:checked+label+ul, ._tree input[type=checkbox]:checked+label:nth-of-type(n)+ul { display: block;}
+      ._tree .folder label svg path { fill: #80a6cd;}
+      ._tree .folder label svg path.open { fill: none;}
+      ._tree .folder input[type=checkbox]:checked+label svg path.open { fill: #fff;}
+      ._icon { color: #9a9a9a; margin-right: 6px; vertical-align: inherit;}
+      ._tree ._icon { vertical-align: baseline;}
+      ._tree svg._icon { vertical-align: text-bottom;}
+      ._container { position: absolute; top: 49px; right: 0; bottom: 0; left: 0; overflow: hidden}
+      ._navbar { height: 48px; position: absolute; top: 0; left: 0; width: 100%; padding: 0 20px; background: #f5f5f5; border-bottom: 1px solid #d9d9d9;}
+      ._navbar .title { display: block; float: left; padding-top: 12px; font-size: 16px; color: #999; text-decoration: none;}
+      ._navbar .logo { width: 26px; vertical-align: middle; padding-right: 10px;}
+      ._tabs { margin: 0; padding: 0; width: 100%; height: 100%; font-size: 14px; background-color: #eaeaea; border-left: 1px solid #ccc; white-space: nowrap;}
+      ._tabs>div { padding: 0; margin: 0; display: inline-block; vertical-align: middle;}
+      ._tabs>div label { color: #aaa; border-right: 1px solid #ccc; background-color: #eaeaea; padding: 10px; display: inline-block; text-transform: uppercase;}
+      ._tabs>div label:hover { background-color: #e4e4e4;}
+      ._tabs>div input[type=radio],
+      ._tabs>div>div { display: none;}
+      ._tabs>div input[type=radio]:checked+label { color: #999; background-color: #f5f5f5;}
+      ._tabs>div input[type=radio]:checked+label+div { position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 15px 10px; margin-top: 35px; display: block; background-color: #f5f5f5;}
+      select { color: #666; background-color: #e4e4e4; border: 0px; text-transform: uppercase; cursor: pointer; outline: none;}
+      select:hover { background-color: #fff;}
+      .splitpane>.handle { width: 1px;}
+      .splitpane.vertical>.handle {height: 1px}
+      .terminal {border: 5px solid black;font-family: courier,fixed,swiss,monospace,sans-serif;font-size: 14px;color: #bbbbbb;background: #000000;   border-collapse: collapse;line-height: normal;}
+      #stats { float: right; padding: 5px 10px; margin: 12px 34px; color: #aaa; background-color: #eaeaea}
+      #tty { position: absolute; box-sizing: border-box; overflow: hidden; top: 0px; bottom: 0px; width: 100%; margin-right: 350px;}
+      #tabs { position: absolute; box-sizing: border-box; overflow: hidden; top: 0px; bottom: 0px; right: 0px; width: 350px;}
+      #clipboard { margin: 0 5px; font: inherit; font-family: inherit; font-size: inherit; line-height: inherit; border-color: #ccc; width: 310px; }
+      #fpsselect,
+      #coreselect { display: block; width: 80%; height: 18px; margin: 10px 5px; }
+      #sound+label { font-size: 12px; background-color: transparent; border: 0; padding: 2px; color: #aaa; font-family: HelveticaNeue, Helvetica, Arial, sans-serif; text-transform: uppercase; }
     </style>
-
-    <script src="http://ui.dev/projects/splitpane/splitpane.js"></script>
-    <script src="assets/js/fileicons/index.js"></script>
-    <script src="index.js"></script>
     <script src="jor1k-master-min.js"></script>
-
-    <script id="folder-template" type="text/x-template">
-        <li id='{{id}}' class="folder">
-            <input type='checkbox' name='{{id}}-branch' id='{{id}}-branch'>
-            <label for='{{id}}-branch' style='padding-left:{{padding}}px'>
-        <svg xmlns='http://www.w3.org/2000/svg' width='14' height='16' viewBox='0 0 14 16' class='_icon'><path d='M13 4H9V3c0-.66-.31-1-1-1H1c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V5c0-.55-.45-1-1-1zM8 4H1V3h7z'/><path class='open' d='M1 3v4.094h12V4.97H8V3H1z'/>
-        </svg><a style="display: inline-block">{{name}}</a>
-    </label>
-            <ul>{{content}}</ul>
-        </li>
-    </script>
-    <script id="file-template" type="text/x-template">
-        <li id='{{id}}' class="file">
-            <label style='padding-left:{{padding}}px'>
-        <a href='{{path}}'>
-        <i class="_icon {{icon}}"></i>{{name}}</a>
-        </label>
-        </li>
-    </script>
-</head>
-
-<body onload="Start()">
+  </head>
+  <bod>
     <div class="_navbar">
-        <a class="title" href="https://websemantics.github.io/linux.js"><img src="assets/img/logo.svg" class="logo" />LINUX.JS</a>
-        <div id="stats"></div>
+      <a class="title" href="https://websemantics.github.io/linux.js"><img src="assets/img/logo.svg" class="logo" />LINUX.JS</a>
+      <div id="stats"></div>
     </div>
     </div>
     <div class="_container">
-        <div class="splitpane">
-            <div style="width: 15%">
-                <div id="tree" class='_tree'></div>
-            </div>
-            <div class="handle"></div>
-            <div>
-                  <table id="tty" class="terminal" cellpadding="0" cellspacing="0"></table>
-
-                  <div id="tabs" class="_tabs">
-                        <div id="id-screen">
-                                <input type="radio" name="tabs" id="id-screen-item" checked="checked">
-                                <label for="id-screen-item">Screen</label>
-                                <div>
-
-
-                                <canvas id="fbfullscreen" width="640" height="400" style="width: 0px; height: 0px;">
-                                    Framebuffer uses canvas
-                                </canvas>
-
-                                <canvas id="fb" class="screen" width="640" height="400" style="width: 320px; height: 200px;">
-                                    Framebuffer uses canvas
-                                </canvas>
-                                </div>
-                            </div><!--
-                         --><div id="id-settings">
-                                <input type="radio" name="tabs" id="id-settings-item" >
-                                <label for="id-settings-item">Settings</label>
-                                <div>
-
-                                    <select id="coreselect" onchange='jor1k.ChangeCore(this.options[this.selectedIndex].value)'>
-            <option value="asm">asm.js Core</option>
-            <option value="safe">Safe Core (Slow)</option>
-        </select>
-                                    <select id="fpsselect" onchange='jor1k.framebuffer.SetFPS(this.options[this.selectedIndex].value)'>
-            <option value="0">0 FPS</option>
-            <option value="5"> 5 FPS</option>
-            <option value="10" selected>10 FPS </option>
-            <option value="20">20 FPS</option>
-            <option value="30">30 FPS</option>
-        </select>
-
-                                    <input type="file" id="files" style="visibility:hidden;width:1px; height:1px;" name="files[]" onchange='OnUploadFiles(this.files)'
-                                        multiple />
-
-
-
-
-                    <input id="sound" type="checkbox" onclick='jor1k.sound.Enabled(this.checked)'><label for="sound">Sound</label>
-
-
-                                </div>
-                            </div><!--
-                         --><div id="id-cspanpboard">
-                                <input type="radio" name="tabs" id="id-clipboard-item">
-                                <label for="id-clipboard-item">Clipboard</label>
-                                <div>
-
-                                    <textarea type=text cols="25" rows="10 " id="clipboard"></textarea>
-
-
-
-                                </div>
-                            </div>
-                        </div>
-
-
-            </div>
+      <div class="splitpane">
+        <div style="width: 15%">
+          <div id="tree" class='_tree'></div>
         </div>
+        <div class="handle"></div>
+        <div>
+          <table id="tty" class="terminal" cellpadding="0" cellspacing="0"></table>
+          <div id="tabs" class="_tabs">
+            <div id="id-screen">
+              <input type="radio" name="tabs" id="id-screen-item" checked="checked">
+              <label for="id-screen-item">Screen</label>
+              <div>
+                <canvas id="fbFullscreen" width="640" height="400" style="width: 0px; height: 0px;">
+                  Framebuffer uses canvas
+                </canvas>
+                <canvas id="fb" class="screen" width="640" height="400" style="width: 320px; height: 200px;">
+                  Framebuffer uses canvas
+                </canvas>
+                <br/>
+                <button id="fullscreen">Full Screen</button>
+              </div>
+            </div>
+            <div id="id-settings">
+              <input type="radio" name="tabs" id="id-settings-item">
+              <label for="id-settings-item">Settings</label>
+              <div>
+                <select id="coreselect" onchange='jor1k.ChangeCore(this.options[this.selectedIndex].value)'>
+                  <option value="asm">asm.js Core</option>
+                  <option value="safe">Safe Core (Slow)</option>
+                </select>
+                <select id="fpsselect" onchange='jor1k.framebuffer.SetFPS(this.options[this.selectedIndex].value)'>
+                  <option value="0">0 FPS</option>
+                  <option value="5"> 5 FPS</option>
+                  <option value="10" selected>10 FPS </option>
+                  <option value="20">20 FPS</option>
+                  <option value="30">30 FPS</option>
+                </select>
+
+                <input type="file" id="files" style="visibility:hidden;width:1px; height:1px;" name="files[]"
+                  onchange='OnUploadFiles(this.files)' multiple />
+                <input id="sound" type="checkbox" onclick='jor1k.sound.Enabled(this.checked)'><label for="sound">Sound</label>
+              </div>
+            </div>
+            <div id="id-cspanpboard">
+              <input type="radio" name="tabs" id="id-clipboard-item">
+              <label for="id-clipboard-item">Clipboard</label>
+              <div>
+                <textarea type=text cols="25" rows="10 " id="clipboard"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
     <script>
-       
+      const Jor1k            = require("Jor1k")
+      const LinuxTerm        = require("LinuxTerm")
+
+      const fbFullscreen     = document.getElementById("fbFullscreen")
+
+      const chars            = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+      const kernels          = { asm: 'kernel/vmlinux.bin.bz2', smp: 'kernel/vmlinuxsmp.bin.bz2'}
+
+      /* Helper functions */
+      const RandomString     = length => Array.from({length}).map(v=>chars[Math.round(Math.random() * (chars.length - 1))]).join('')
+      const queryParams      = (query = window.location.search.substring(1)) => Object.fromEntries(query.split('&').map(pair=>pair.split('=')))
+      const getQueryVariable = (name, params = queryParams()) => params[name] ? decodeURIComponent(params[name]) : null
+      const OnUploadFiles    = files => files.forEach(file => jor1k.fs.UploadExternalFile(file))
+
+      function Main() {
+        const params         = Object.keys(queryParams())
+
+        const userid         = getQueryVariable('user')     || RandomString(10)
+        const relayURL       = getQueryVariable('relayURL') || 'wss://relay.widgetry.org/'
+        const ncores         = getQueryVariable('n')        || 1
+        const cpu            = getQueryVariable('cpu')      || 'asm'
+
+        const lazyloadimages = params.includes('user') ? [`sync/tarballs/${userid}.tar.bz2`] : []
+
+        const config = {
+          path: './sys/',
+          term: new LinuxTerm('tty'),             /* canvas id for the terminal */
+          fbid: 'fb',                             /* canvas id for the framebuffer */
+          clipboardid: 'clipboard',               /* input id for the clipboard */
+          statsid: 'stats',                       /* object id for the statistics test */
+          fps: 10,                                /* update interval of framebuffer */
+          relayURL,                               /* relay url for the network */
+          userid,                                 /* unique user id string, chosen randomly, from a url, or a cookie. */
+          syncURL: '//jor1k.com/sync/upload.php', /* url to sync a certain folder */
+          worker: new Worker('jor1k-worker-min.js'),
+          system: {
+            cpu,                                  /* short name for the cpu to use */
+            arch: 'or1k',                         /* or1k */
+            kernelURL: kernels[cpu]  ,            /* kernel image */
+            memorysize: 32,                       /* in MB, must be a power of two */
+            ncores,
+          },
+          fs: {
+            basefsURL: 'basefs.json',             /* json file with the basic filesystem configuration. */
+            extendedfsURL: 'fs.json',             /* json file with extended filesystem information. Loaded after the basic filesystem has been loaded. */
+            earlyload: [],                        /* list of files which should be loaded immediately after they appear in the filesystem */
+            lazyloadimages                        /* list of automatically loaded images after the basic filesystem has been loaded */
+          }
+        }
+
+        if (!['user', 'cpu', 'n', 'relayURL'].every(p=>params.includes(p))) /* update url if any of the query parameters are missing */
+          window.history.pushState([], '', `?user=${encodeURIComponent(userid)}&cpu=${encodeURIComponent(cpu)}&n=${encodeURIComponent(ncores)}&relayURL=${encodeURIComponent(relayURL)}`)
+
+        if(cpu == 'smp') console.log('Load smp kernel')
+
+        jor1k = new Jor1k(config)
+      }
+
+       function Fullscreen(evt) {
+        document.body.style.margin = '0px'
+        window.onresize = event => {
+          const x = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+          const y = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+          const d = x / y
+
+          fbFullscreen.style.width = `${d > 1.6 ? y * 1.6 : x}px`
+          fbFullscreen.style.height = `${d > 1.6 ? y : x / 1.6}px`
+        }
+
+        window.onresize()
+        jor1k.framebuffer.Init("fbFullscreen")
+      }
+
+      window.onload      = Main
+      fullscreen.onclick = Fullscreen
     </script>
-
-    <script>
-        var Jor1k = require("Jor1k");
-        var LinuxTerm = require("LinuxTerm");
-
-        function Fullscreen() {
-            document.body.style.margin = '0px';
-            window.onresize = function (event) {
-                var w = window,
-                    d = document,
-                    e = d.documentElement,
-                    g = d.getElementsByTagName('body')[0],
-                    x = w.innerWidth || e.clientWidth || g.clientWidth,
-                    y = w.innerHeight || e.clientHeight || g.clientHeight;
-
-                var d = x / y;
-                if (d > 1.6) x = y * 1.6; else y = x / 1.6;
-
-                var fb = document.getElementById("fbfullscreen");
-                fb.style.width = "" + x + "px";
-                fb.style.height = "" + y + "px";
-            };
-            window.onresize();
-            jor1k.framebuffer.Init("fbfullscreen");
-        }
-
-
-        function OnUploadFiles(files) {
-            for (var i = 0, f; f = files[i]; i++) {
-                jor1k.fs.UploadExternalFile(f);
-            }
-        }
-
-        function RandomString(length) {
-            var chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            var result = '';
-            for (var i = length; i > 0; --i) result += chars[Math.round(Math.random() * (chars.length - 1))];
-            return result;
-        }
-
-        // from https://css-tricks.com/snippets/javascript/get-url-variables/
-        function getQueryVariable(variable) {
-            var query = window.location.search.substring(1);
-            var vars = query.split("&");
-            for (var i = 0; i < vars.length; i++) {
-                var pair = vars[i].split("=");
-                if (pair[0] == variable) { return decodeURIComponent(pair[1]); }
-            }
-            return (false);
-        }
-
-        function Start() {
-
-            var pushState = false, loadUserData = false;
-            var userid = getQueryVariable("user");
-            if (userid == false) {
-                userid = RandomString(10);
-                pushState = true;
-            } else {
-                loadUserData = true;
-            }
-            // allow specifying relay URL via querystring
-            var relayURL = getQueryVariable("relayURL")
-            if (relayURL == false) {
-                relayURL = "wss://relay.widgetry.org/";
-                pushState = true;
-            }
-
-            jor1kparameters = {
-                system: {
-                    kernelURL: "vmlinux.bin.bz2", // kernel image
-                    memorysize: 32, // in MB, must be a power of two
-                    cpu: "asm", // short name for the cpu to use
-                    ncores: 1,
-                },
-                fs: {
-                    basefsURL: "basefs.json", // json file with the basic filesystem configuration.
-                    extendedfsURL: "../fs.json", // json file with extended filesystem informations. Loaded after the basic filesystem has been loaded.
-                    earlyload: [], // list of files which should be loaded immediately after they appear in the filesystem
-                    lazyloadimages: [
-                    ] // list of automatically loaded images after the basic filesystem has been loaded
-                },
-
-                term: new LinuxTerm("tty"), // canvas id for the terminal
-                fbid: "fb",                // canvas id for the framebuffer
-                clipboardid: "clipboard",  // input id for the clipboard
-                statsid: "stats",          // object id for the statistics test
-                fps: 10, // update interval of framebuffer
-                relayURL: relayURL, // relay url for the network
-                userid: userid, // unique user id string. Empty, choosen randomly, from a url, or from a cookie.
-                syncURL: "//jor1k.com/sync/upload.php", // url to sync a certain folder
-                path: "./sys/or1k/",
-            }
-
-            // --------------------------------------------------------
-            if (loadUserData)
-                jor1kparameters.fs.lazyloadimages.push("sync/tarballs/" + userid + ".tar.bz2");
-
-            var nCores = getQueryVariable("n");
-            if (nCores != false) {
-                jor1kparameters.system.ncores = nCores;
-            } else {
-                pushState = true;
-            }
-            var cpu = getQueryVariable("cpu");
-            if (cpu != false) {
-                jor1kparameters.system.cpu = cpu;
-                if (jor1kparameters.system.cpu == "smp") {
-                    console.log("Load smp kernel");
-                    jor1kparameters.system.kernelURL = "vmlinuxsmp.bin.bz2";
-                }
-            } else {
-                pushState = true;
-            }
-            if (pushState) {
-                window.history.pushState([], "", "?user=" + encodeURIComponent(jor1kparameters.userid) + "&cpu=" + encodeURIComponent(jor1kparameters.system.cpu) + "&n=" + encodeURIComponent(jor1kparameters.system.ncores) + "&relayURL=" + encodeURIComponent(relayURL));
-            }
-
-            // --------------------------------------------------------
-
-            jor1k = new Jor1k(jor1kparameters);
-
-        }
-
-    </script>
-
-</body>
-
+  </body>
 </html>

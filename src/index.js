@@ -10,8 +10,8 @@ get('/sys/fs.json', function (err, data) {
 })
 
 /**
- * Parse files tree data and generate HTML    
- *  
+ * Parse files tree data and generate HTML
+ *
  * @param {Object} files - files tree.
  * @returns {void}
  */
@@ -50,9 +50,9 @@ function tree(data) {
 }
 
 /**
- * Insert html content into an element    
- *  
- * @param {string} id - element id 
+ * Insert html content into an element
+ *
+ * @param {string} id - element id
  * @param {string} html - html content
  * @param {boolean} replace - replace the dom node
  */
@@ -72,8 +72,8 @@ function render(id, html, replace) {
 
 /**
  * Get and compile a template, replace placeholder with their values
- * 
- * @param {string} id - template element id 
+ *
+ * @param {string} id - template element id
  * @param {object} context - key/value pairs, i.e. {name: 'World'}
  * @returns {string}
  */
@@ -88,7 +88,7 @@ function template(id, context) {
 
 /**
  * Make an HTTP GET request.
- * 
+ *
  * @param {string} url - resource url.
  * @param {Function} cb - Callback function.
  * @returns {void}
